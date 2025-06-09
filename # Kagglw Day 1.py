@@ -145,3 +145,16 @@ print(type(new_string))  # Check data type of the new string
 multiplied_string = "abc" * 3 ## cant multiply a string by a float
 print(multiplied_string)  # Repeats the string 3 times
 print(type(multiplied_string))  # Check data type of the multiplied string
+
+# Data type house cost calculator
+def get_expected_cost(beds, baths, has_basement):
+    value = 80000 + 30000 * beds + 10000 * baths + has_basement * 40000
+    return value
+# Solid_gold example
+def cost_of_project(engraving, solid_gold):
+    cost = solid_gold * (100 + 10 * len(engraving)) + (not solid_gold) * (50 + 7 * len(engraving))
+    return cost
+project_one = cost_of_project("Happy Birthday", True)
+print(project_one)  # Cost of the project with solid gold
+project_two = cost_of_project("Happy Birthday", False)
+print(project_two)  # Cost of the project without solid gold
