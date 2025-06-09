@@ -23,6 +23,7 @@ seconds_in_a_miute = 60
 Total_time = No_of_years * Days_in_a_year * Hours_in_a_day * minures_in_an_hour * seconds_in_a_miute
 print(Total_time)
 
+## FUNCTIONS
 # Define function
 def add_three(input_var):
     output_var = input_var + 3
@@ -87,3 +88,60 @@ def get_actual_cost(sqft_walls, sqft_ceiling, sqft_per_gallon, cost_per_gallon):
     return cost
 cost_of_paint = get_actual_cost(1000, 500, 400, 25)
 print(cost_of_paint)
+
+## DATA TYPES
+almost_pi = 22/ 7
+print(almost_pi)
+# Data type conversion
+pi = float(almost_pi)
+print(pi)
+# Check data type
+print(type(pi))
+# Round pi to 5 decimal places
+pi_rounded = round(pi, 5)
+print(pi_rounded)
+# Check data type after rounding
+print(type(pi_rounded))
+
+# Boolean data type
+# has 1 of 2 values: True or False
+z_one = True
+z_two = False
+# Check data type of boolean
+print(type(z_one))
+print(type(z_two))
+# Boolean operations
+z_three = (1< 2)
+print(z_three)
+print(type(z_three))
+# Boolean operations with strings using not
+z_three = not z_two
+print(z_three)
+
+# String data type
+w = "Hello, Python!"
+print(w)
+print(type(w))
+print(len(w))  # Length of the string
+
+shortest_string = ""
+print(type(shortest_string))
+print(len(shortest_string))  # Length of the empty string
+
+# Number inside of a quotation becomes a string
+number_string = "123.45"
+print(type(number_string))
+print(len(number_string))  # Length of the string representation of a number
+
+Also_my_string = float(number_string) # Designationg a variable as a float
+print(type(Also_my_string))  # Convert string to float
+print(len(str(Also_my_string)))  # Length of the string representation of the float
+
+# String Addition
+new_string = "abc" + "def"
+print(new_string)  # Concatenation of strings
+print(type(new_string))  # Check data type of the new string
+# String Multiplication
+multiplied_string = "abc" * 3 ## cant multiply a string by a float
+print(multiplied_string)  # Repeats the string 3 times
+print(type(multiplied_string))  # Check data type of the multiplied string
