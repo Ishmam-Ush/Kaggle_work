@@ -47,3 +47,11 @@ def payment_with_variable_inputs(num_of_hours, pay_rate, tax_rate):
 pay2 = (payment_with_variable_inputs(20, 24, 0.8))
 print(pay2)
 
+
+# Exercise: House cost calculator
+def get_expected_cost(beds, baths):
+    value = 80000 +((30000*beds)+(10000*baths))
+    return value
+House_value = get_expected_cost(3, 2)
+print(House_value)
+
