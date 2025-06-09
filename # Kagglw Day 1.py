@@ -37,3 +37,13 @@ def payment(num_of_hours):
 # Call complex function
 pay = payment(10)
 print(pay)
+
+# Function with multiple parameters
+def payment_with_variable_inputs(num_of_hours, pay_rate, tax_rate):
+    pay_pretax2 = num_of_hours * pay_rate
+    pay_posttax2 = pay_pretax2 * (1-tax_rate)
+    return pay_posttax2
+# Call function with multiple parameters
+pay2 = (payment_with_variable_inputs(20, 24, 0.8))
+print(pay2)
+
