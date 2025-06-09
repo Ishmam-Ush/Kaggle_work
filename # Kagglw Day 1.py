@@ -66,3 +66,12 @@ print(option_one)
 print(option_two)
 print(option_three)
 print(option_four)
+
+# Exercise: Function to calculate the cost of paint
+def get_cost(sqft_walls, sqft_ceiling, sqft_per_gallon, cost_per_gallon):
+    cost = (((sqft_walls + sqft_ceiling)/sqft_per_gallon) * cost_per_gallon)
+    return cost
+# Call the function with example values
+cost_of_paint = get_cost(1000, 500, 400, 25)
+print(cost_of_paint)
+
