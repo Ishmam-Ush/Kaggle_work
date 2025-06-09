@@ -28,3 +28,12 @@ def add_three(input_var):
 new_number = add_three(5)
 print(new_number)
 
+# Complex function
+def payment(num_of_hours):
+    pay_pretax = num_of_hours * 15
+    pay_posttax = pay_pretax * (1- 0.2)
+    return pay_posttax
+
+# Call complex function
+pay = payment(10)
+print(pay)
