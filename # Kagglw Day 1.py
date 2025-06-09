@@ -20,3 +20,11 @@ seconds_in_a_miute = 60
 Total_time = No_of_years * Days_in_a_year * Hours_in_a_day * minures_in_an_hour * seconds_in_a_miute
 print(Total_time)
 
+# Define function
+def add_three(input_var):
+    output_var = input_var + 3
+    return output_var
+# Call function
+new_number = add_three(5)
+print(new_number)
+
