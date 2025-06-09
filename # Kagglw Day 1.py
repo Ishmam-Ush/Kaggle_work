@@ -1,5 +1,8 @@
 # Kagglw Day 1
 
+import math
+
+
 print("Hello, World!")
 
 # Aerithmetic and variables 
@@ -75,3 +78,12 @@ def get_cost(sqft_walls, sqft_ceiling, sqft_per_gallon, cost_per_gallon):
 cost_of_paint = get_cost(1000, 500, 400, 25)
 print(cost_of_paint)
 
+# use of math.ceil to round up the gallons of paint needed
+def get_actual_cost(sqft_walls, sqft_ceiling, sqft_per_gallon, cost_per_gallon):
+    total_sqft = (sqft_walls + sqft_ceiling)
+    gallon_required = (total_sqft/sqft_per_gallon)
+    gallons_to_buy = math.ceil(gallon_required)
+    cost = (gallons_to_buy * cost_per_gallon)
+    return cost
+cost_of_paint = get_actual_cost(1000, 500, 400, 25)
+print(cost_of_paint)
