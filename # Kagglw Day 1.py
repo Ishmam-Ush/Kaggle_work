@@ -55,3 +55,14 @@ def get_expected_cost(beds, baths):
 House_value = get_expected_cost(3, 2)
 print(House_value)
 
+# call the function with different parameters
+# Using the get_expected_cost function to fill in each value
+option_one = get_expected_cost(2,3)
+option_two = get_expected_cost(3,2)
+option_three = get_expected_cost(3,3)
+option_four = get_expected_cost(3,4)
+
+print(option_one)
+print(option_two)
+print(option_three)
+print(option_four)
