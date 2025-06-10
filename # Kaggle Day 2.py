@@ -15,3 +15,13 @@ def evaluate_temp(temp):
     else:
         return "Normal temperature"
 print(evaluate_temp(39))  # Normal temperature
+
+# if elif else statement
+def evaluate_temperature(temp):
+    if temp > 40:
+        return "High fever"
+    elif temp > 37:
+        return "Low fever"
+    else:
+        return "Noermal temperature"
+print(evaluate_temperature(39)) # Low fever
