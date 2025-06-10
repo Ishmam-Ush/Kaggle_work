@@ -36,3 +36,22 @@ def earnings(pay):
     return tax 
 print(earnings(15000))  # 4500.0
 print(earnings(10000))  # 2500.0
+
+# grade calculation
+def get_grade(score):
+    grade = "A","B","C","D","F"
+    if score >= 90: 
+        return  "A"
+    elif score >= 80:
+        return  "B"
+    elif score >= 70:
+        return  "C"
+    elif score >= 60:
+        return  "D"
+    elif score < 60:
+        return  "F"
+print(get_grade(95))  # A
+print(get_grade(85))  # B
+print(get_grade(75))  # C
+print(get_grade(65))  # D
+print(get_grade(55))  # F
