@@ -25,3 +25,14 @@ def evaluate_temperature(temp):
     else:
         return "Noermal temperature"
 print(evaluate_temperature(39)) # Low fever
+
+# Tax calculation
+
+def earnings(pay):
+    if pay >= 12000:
+        tax = 0.30*pay
+    elif pay < 12000:
+        tax = 0.25 *pay
+    return tax 
+print(earnings(15000))  # 4500.0
+print(earnings(10000))  # 2500.0
