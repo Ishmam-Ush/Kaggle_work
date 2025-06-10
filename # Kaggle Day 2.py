@@ -84,3 +84,15 @@ print(get_water_bill(5000))   # 25.0
 print(get_water_bill(15000))  # 90.0
 print(get_water_bill(25000))  # 175.0
 print(get_water_bill(35000))  # 350.0
+
+# phone bill calculation
+def get_phone_bill(gb):
+    bill = 100
+    if gb <=15:
+        bill = 100
+    else:
+        bill = 100+ (gb-15)*100
+    return bill
+print(get_phone_bill(10))   # 100
+print(get_phone_bill(20))   # 500
+print(get_phone_bill(30))   # 1000
