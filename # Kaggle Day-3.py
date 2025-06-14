@@ -75,4 +75,19 @@ def to_smash(total_candies,n_friends=3):
     1
     """
     return total_candies % n_friends
-# 
+# 4th ex
+def round_to_two_places(x):
+    return round(x, 2)
+print(round_to_two_places(3.1416))
+ # 5th ex
+x = -10
+y = 5
+# Which of the two variables above has the smallest absolute value?
+smallest_abs = x if abs(x) <  abs(y) else y
+print(smallest_abs)
+# 6th ex
+def y_absolute(x):
+    y = abs(x)
+    return y
+
+print(y_absolute(-5))
