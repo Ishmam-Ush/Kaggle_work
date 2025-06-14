@@ -29,3 +29,16 @@ print(
     squared_call(mult_by_five, 5),
     sep='\n'
 )  # \n is the newline character, used to print each result on a new line
+
+# Higher order functions
+def mod_5(x):
+    """
+    Returns the remainder of x divided by 5."""
+    return x % 5
+print(
+    "The largest number is",
+    max(100,63,21),
+    "the largest number with the largest remainder is",
+    max(100, 63, 14, key=mod_5),
+    sep='\n'
+)
