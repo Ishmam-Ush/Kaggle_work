@@ -107,3 +107,26 @@ def is_odd(n):
     return n % 2 == 1
 print("Is 3 odd?", is_odd(3))
 print("Is 4 odd?", is_odd(4))
+
+# and not or clause
+def can_run_for_president(age, is_natural_born_citizen):
+    """Return True if the person can run for president, False otherwise."""
+    return age >= 35 and is_natural_born_citizen
+print("Can a 19 year old who is a natural born citizen run for president?", can_run_for_president(19, True))
+print("Can a 35 year old who is not a natural born citizen run for president?", can_run_for_president(35, False))
+
+# if elif else statements
+def inspect(x):
+    """Return a string describing the type of x."""
+    if x == 0:
+        print(x, "is zero")
+    elif x < 0:
+        print(x, "is negative")
+    elif x > 0:
+        print(x," is positive")
+    else:
+        print(x, "isn't a number")
+inspect(0)
+inspect(-45)
+inspect(45)
+inspect("hello")
