@@ -13,3 +13,19 @@ greet()
 greet(who="world")
 greet("world")
 
+# Function within a function
+def mult_by_five(x):
+    return 5 * x
+def call(fn,arg):
+    """
+    Calls the function fn with the argument arg."""
+    return fn(arg)
+def squared_call(fn, arg):
+    """
+    Calls the function fn with the argument arg and returns the square of the result."""
+    return fn(fn(arg))
+print(
+    call(mult_by_five, 5),
+    squared_call(mult_by_five, 5),
+    sep='\n'
+)  # \n is the newline character, used to print each result on a new line
