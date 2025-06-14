@@ -91,3 +91,19 @@ def y_absolute(x):
     return y
 
 print(y_absolute(-5))
+
+### Booleans and conditionals
+
+def can_run_for_president(age):
+    """Return True if the person can run for president, False otherwise."""
+    return age >=35
+print("can a 19 year old run for president?" ,can_run_for_president(19))
+print("can a 35 year old run for president?" ,can_run_for_president(35))
+print("can a 40 year old run for president?" ,can_run_for_president(40))
+
+# odd/even
+def is_odd(n):
+    """Return True if n is odd, False otherwise."""
+    return n % 2 == 1
+print("Is 3 odd?", is_odd(3))
+print("Is 4 odd?", is_odd(4))
