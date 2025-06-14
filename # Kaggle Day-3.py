@@ -31,6 +31,7 @@ print(
 )  # \n is the newline character, used to print each result on a new line
 
 # Higher order functions
+
 def mod_5(x):
     """
     Returns the remainder of x divided by 5."""
@@ -42,3 +43,36 @@ print(
     max(100, 63, 14, key=mod_5),
     sep='\n'
 )
+
+# Exercise 
+def round_to_two_places(num):
+    
+    """Return the given number rounded to two decimal places. 
+    
+    >>> round_to_two_places(3.14159)
+    3.14
+    """
+    
+    # Replace this body with your own code.
+    return round(num, 2)
+    # ("pass" is a keyword that does literally nothing. We used it as a placeholder
+    # because after we begin a code block, Python requires at least one line of code)
+
+# Second exercise
+# Put your test code here
+print(round(1234.567, 2))   # rounds to 2 decimal places → 1234.57
+print(round(1234.567, 0))   # rounds to whole number → 1235.0
+print(round(1234.567, -1))  # rounds to nearest 10 → 1230.0
+print(round(1234.567, -2))  # rounds to nearest 100 → 1200.0
+print(round(1234.567, -3))  # rounds to nearest 1000 → 1000.0
+
+# Third exercise
+def to_smash(total_candies,n_friends=3):
+    """Return the number of leftover candies that must be smashed after distributing
+    the given number of candies evenly between 3 friends.
+    
+    >>> to_smash(91)
+    1
+    """
+    return total_candies % n_friends
+# 
