@@ -176,3 +176,20 @@ def concise_is_negative(number):
     return number < 0
 print(is_negative(-5))  # Should return True
 print(concise_is_negative(-5))  # Should return True
+# exercise 4
+def onionless(ketchup, mustard, onion):
+    """Return whether the customer doesn't want onions.
+    """
+    return not onion
+# exercise 5
+def wants_all_toppings(ketchup, mustard, onion):
+    """Return whether the customer wants "the works" (all 3 toppings)
+    """
+    return ketchup and mustard and onion 
+# exercise 6
+def exactly_one_sauce(ketchup, mustard, onion):
+    """Return whether the customer wants either ketchup or mustard, but not both.
+    (You may be familiar with this operation under the name "exclusive or")
+    """
+    return ((ketchup and not mustard) or (not ketchup and mustard)) and onion
+# exercise 7
