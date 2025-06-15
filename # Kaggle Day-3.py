@@ -129,5 +129,50 @@ def inspect(x):
 inspect(0)
 inspect(-45)
 inspect(45)
-inspect("hello")
 
+def prepared_for_weather(have_umbrella, rain_level, have_hood, is_workday):
+    """Return True if the person is prepared for the weather, False otherwise."""
+    return (
+        have_umbrella 
+        or ((rain_level < 5) and have_hood) 
+        or (not (rain_level > 0 and is_workday))
+    )
+print("Is the person prepared for the weather?", prepared_for_weather(True, 3, False, True))
+
+# Exercise 1 
+# Your code goes here. Define a function called 'sign'
+def sign(x):
+    if x>0:
+        return 1
+    elif x<0:
+        return -1
+    else: x == 0
+    return 0
+print(sign(-9))
+
+# Exercise 2
+def prepared_for_weather(have_umbrella, rain_level, have_hood, is_workday):
+    # Don't change this code. Our goal is just to find the bug, not fix it!
+    return have_umbrella or rain_level < 5 and have_hood or not rain_level > 0 and is_workday
+
+# Change the values of these inputs so they represent a case where prepared_for_weather
+# returns the wrong answer.
+have_umbrella = False
+rain_level = 0.0
+have_hood = False
+is_workday = False
+
+# Check what the function returns given the current values of the variables above
+actual = prepared_for_weather(have_umbrella, rain_level, have_hood, is_workday)
+print(actual)
+# Exercise 3
+def is_negative(number):
+    if number < 0:
+        return True
+    else:
+        return False
+
+def concise_is_negative(number):
+    return number < 0
+print(is_negative(-5))  # Should return True
+print(concise_is_negative(-5))  # Should return True
