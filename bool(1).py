@@ -1,2 +1,0 @@
-int(True)
-int(False)
