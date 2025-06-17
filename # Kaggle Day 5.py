@@ -72,3 +72,34 @@ print(count_negatives_comprehension(numbers))  # This uses list comprehension to
 def count_negatives_alternative(nums):
     return sum([num < 0 for num in nums])
 print(count_negatives_alternative(numbers))  # This uses the sum function to count the number of negative numbers in the list and prints the result.
+
+## Exercise 1
+# Had problems finding the bug in this code
+def has_lucky_number(nums):
+    """Return whether the given list of numbers is lucky. A lucky list contains
+    at least one number divisible by 7.
+    """
+    for num in nums:
+        if num % 7 == 0:
+            return True
+    return False
+
+# Exercise 2
+def elementwise_greater_than(L, thresh):
+    """Return a list with the same length as L, where the value at index i is 
+    True if L[i] is greater than thresh, and False otherwise.
+    
+    >>> elementwise_greater_than([1, 2, 3, 4], 2)
+    [False, False, True, True]
+    """
+    return[element>thresh for element in L]
+# Exercise 3
+def menu_is_boring(meals):
+    """Given a list of meals served over some period of time, return True if the
+    same meal has ever been served two days in a row, and False otherwise.
+    """
+    for menu in range(1, len(meals)): # first we select the range of the meals list starting from 1 to the length of the meals list
+        # then we check if the meal at the current index is the same as the meal at the previous index
+        if meals[menu] == meals[menu-1] : # if yes we say that the menu is boring
+            return True
+    return False # else we say that the menu is not boring
