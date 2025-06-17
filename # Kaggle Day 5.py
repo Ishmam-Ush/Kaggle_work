@@ -51,3 +51,24 @@ print(short_planets)
 # This returns string all caps
 long_planets = [planet.upper() + '!' for planet in planets if len(planet) < 6 ]
 print(long_planets)
+
+
+# Count negative numbers in a list
+numbers = [1, -2, 3, -4, 5, -6, 7, -8]
+def count_negatives(nums):
+    negative = 0
+    for num in nums:
+        if num<0:
+            negative= negative + 1
+    return negative
+print(count_negatives(numbers))  # This counts the number of negative numbers in the list and prints the result.
+
+# Count negative numbers in a list using list comprehension
+def count_negatives_comprehension(nums):
+    return len([num for num in nums if num <0])
+print(count_negatives_comprehension(numbers))  # This uses list comprehension to count the number of negative numbers in the list and prints the result.
+
+# Different way of solbving the same problem
+def count_negatives_alternative(nums):
+    return sum([num < 0 for num in nums])
+print(count_negatives_alternative(numbers))  # This uses the sum function to count the number of negative numbers in the list and prints the result.
