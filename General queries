@@ -37,3 +37,11 @@ def estimate_average_slot_payout(n_runs):
     return  sum(payouts) / n_runs # This calculates the average payout by summing all the payouts and dividing by the number of runs.
 # Example usage of the slot machine simulation
 print(estimate_average_slot_payout(1000))  # This runs the slot machine 1000 times and returns the average net profit per run.
+
+# Yes, we can put unicode characters right in our string literals :)
+' 👏 '.join([word.upper() for word in words]) ## DIDNT UNDERSTAND THIS ONE HOW TO ADD UNICOODE AND WHY USE UPPER AS I KNOW UPER IS USED TO CREATE UPPERCASE LETTERS
+
+planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+planet_to_initial = {planet: planet[0] for planet in planets} # what happens here is we call planet and its first index from the list of planets
+print(planet_to_initial, sep='\n') # IN THIS LINE OF CODE I WANTE THE PLANETS TO BE PRINTED IN SEPARATE LINES BUT SEEMS LIKE THE CODE ISNT WORKING AS I WANT IT TO , WOULD LIKE SOME INSIGHTS HOW TO DO IT ???
+
