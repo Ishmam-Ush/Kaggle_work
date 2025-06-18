@@ -45,3 +45,24 @@ planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', '
 planet_to_initial = {planet: planet[0] for planet in planets} # what happens here is we call planet and its first index from the list of planets
 print(planet_to_initial, sep='\n') # IN THIS LINE OF CODE I WANTE THE PLANETS TO BE PRINTED IN SEPARATE LINES BUT SEEMS LIKE THE CODE ISNT WORKING AS I WANT IT TO , WOULD LIKE SOME INSIGHTS HOW TO DO IT ???
 
+def word_search(doc_list, keyword):
+    """
+    Takes a list of documents (each document is a string) and a keyword. 
+    Returns list of the index values into the original list for all documents 
+    containing the keyword.
+
+    Example:
+    doc_list = ["The Learn Python Challenge Casino.", "They bought a car", "Casinoville"]
+    >>> word_search(doc_list, 'casino')
+    >>> [0]
+    """
+    indices = []
+
+    for i, doc in enumerate(doc_list):
+
+        words = doc.split()
+        normalized = [word.rstrip('.,').lower() for word in words]
+
+        if keyword.lower() in normalized: ## WHILE SOLVING THIS ONE I TRIED TO USE WORDS_RESTRUCTURED INSTEAD OF NORMALIZED, BUT IT SHOWED PROBLEM WHICH SAID ITS NOT DEFINED , WHY DID IT NOT HAPPEN FOR NORMALIZED AS T WASNT DEFINED EITHER???
+            indices.append(i)
+    return indices
