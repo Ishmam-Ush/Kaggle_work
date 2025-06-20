@@ -18,3 +18,4 @@ print("this ia a {}".format(type(numpy)))
 print("it contains...",
       dir(numpy.random)[-15:]
       )
+
