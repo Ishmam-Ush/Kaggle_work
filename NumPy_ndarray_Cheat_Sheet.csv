@@ -1,0 +1,26 @@
+Category,Function / Property,Description
+Creation,np.array(),Create array from list
+Creation,np.zeros(),Create zeros array
+Creation,np.ones(),Create ones array
+Creation,np.empty(),Uninitialized array
+Attributes,.shape,Dimensions of array
+Attributes,.ndim,Number of dimensions
+Attributes,.dtype,Data type
+Attributes,.itemsize,Bytes per element
+Attributes,.nbytes,Total memory used
+Attributes,.size,Total number of elements
+Reshape/Transform,.reshape(),Change shape of array
+Reshape/Transform,.flatten(),Flatten to 1D
+Reshape/Transform,.transpose() / .T,Transpose array
+Math Ops,.sum(),Sum of elements
+Math Ops,.mean(),Average of elements
+Math Ops,.max(),Max value
+Math Ops,.dot(),Dot product
+Conversion,.astype(),Change data type
+Conversion,.tolist(),Convert to Python list
+Utilities,.copy(),Deep copy
+Utilities,.view(),Create a view (no copy)
+Utilities,.setflags(),Control write permissions
+Indexing,"[i, j]",Element access
+Indexing,[start:stop],Slice of array
+Indexing,[bool_array],Conditional indexing
