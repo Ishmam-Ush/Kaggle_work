@@ -3,6 +3,8 @@
         "./pip install "
     ],
     "cSpell.words": [
-        "learntools"
+        "Kaggle",
+        "learntools",
+        "simplelinearregression"
     ]
 }

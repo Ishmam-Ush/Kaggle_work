@@ -1,1 +1,33 @@
-# Pandas 
+# Pandas DataFrame 
+import pandas as pd
+df = pd.DataFrame({'Yes':[12,135], 'No':[54,51]})
+print(df)
+
+# String DataFrame Entry
+Weather = pd.DataFrame({'Monday':['Low 21 Degrees', 'High 34 Degrees'] , 'Tuesday':['low 15 Degrees', 'High 25 Degrees']})
+print(Weather)
+
+# Using row label or indexing
+Weather = pd.DataFrame({'Monday':['21 Degrees', '34 Degrees'],
+'Tuesday':['15 Degrees', '25 Degrees']},
+index = ['Lowest Temperature','Highest Temperature']
+)
+print(Weather)
+
+# Series 
+S=pd.Series([1,2,3,4,5],
+index =['A','B','C','D','E']
+)
+print(S)
+
+# QUESTION
+# wine_reviews = pd.read_csv("../input/wine-reviews/winemag-data-130k-v2.csv") in this code inside the parentheses is that file path??
+
+# name.shape() - for getting the size of the file i.e row and column size 
+# name.head - command for getting the resultant of the dataframes , [if not mentioned by default it'll show the contents of the first 5 rows] 
+Simple_LR = pd.read_csv(r"E:\Courses\Python Kaggle\Datasets\simplelinearregression.csv")
+print(Simple_LR.shape)
+print(Simple_LR.head(4))
+print(Simple_LR.head())
+print(Simple_LR.head(7))
+
