@@ -31,3 +31,36 @@ print(Simple_LR.head(4))
 print(Simple_LR.head())
 print(Simple_LR.head(7))
 
+# Making pandas take already created index instead of making a new one
+Simple_LR = pd.read_csv(r"E:\Courses\Python Kaggle\Datasets\simplelinearregression.csv", index_col=0)
+print(Simple_LR.head(7))
+
+## EX1
+# Your code goes here. Create a dataframe matching the above diagram and assign it to the variable fruits.
+fruits = pd.DataFrame([{"Apples":30,"Bananas":21}])
+print(fruits)
+
+## EX2
+# Your code goes here. Create a dataframe matching the above diagram and assign it to the variable fruit_sales.
+fruit_sales = pd.DataFrame([{"Apples":35,"Bananas":21},{"Apples":41,"Bananas":34}],
+index=["2017 Sales", "2018 Sales"]
+)
+
+fruit_sales = pd.DataFrame([[35, 21], [41, 34]], columns=['Apples', 'Bananas'],
+index=['2017 Sales', '2018 Sales'])
+
+## Ex 3 I tried to solve this one in  different way but neither of them gave the exact solution(This is the solution from the website Kaggle)
+portion = ["4 cups", "1 cup", "2 large", "1 can"]
+items = ['Flour', 'Milk', 'Eggs', 'Spam']
+
+recipe = pd.Series(portion, index=items, name="Dinner")
+
+
+## Ex 4
+#reviews = pd.read_csv("../input/wine-reviews/winemag-data_first150k.csv", index_col=0)
+
+## EX 5 !!! saving datasets to csv using to_csv function
+# exercise example
+# animals.to_csv("cows_and_goats.csv")
+# personal example
+fruit_sales.to_csv("Fruits_sales.csv")
