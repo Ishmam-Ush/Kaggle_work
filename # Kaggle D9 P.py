@@ -12,8 +12,15 @@ print(Wine_review['country'])
 print(Wine_review['country'][1])
 
 # calling rows
-print(Wine_review.loc[])
+print(Wine_review.loc[:])
 print(Wine_review.iloc[1])
 
 
+print(pd.Series([31,32,33], index=['sales 2017', 'sales 2018', 'sales 2019'], name='Sales'))
 
+print(Wine_review.head())
+print(Wine_review.tail())
+print(Wine_review.shape)
+print(Wine_review.columns)
+print(Wine_review.index)
+print(Wine_review.dtypes)
