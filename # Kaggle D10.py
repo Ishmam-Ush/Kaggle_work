@@ -11,3 +11,14 @@ print(Wine_review.loc[(Wine_review.country == "Italy") & (Wine_review.points >= 
 print(Wine_review.loc[(Wine_review.country == "Italy") | (Wine_review.points >= 90)])
 print(Wine_review.loc[Wine_review.country.isin(["Italy", "France"])])
 print(Wine_review.loc[Wine_review.price.notnull()])
+
+
+# Assigning constant value to a column
+# This will add a new column 'critic' with the value 'everyone' for all rows
+Wine_review['critic']= 'everyone'
+print(Wine_review['critic'])
+
+# Assigning an iterable to a column
+# This will add a new column 'critic' with the values from the list
+Wine_review['index backwards'] = range(len(Wine_review), 0 ,-1)
+print(Wine_review['index backwards'])
