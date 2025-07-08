@@ -12,3 +12,55 @@ print(reviews.groupby('winery').apply(lambda df: df.title.iloc[0]))
 
 # Grouping by multiple columns
 print(reviews.groupby(['country', 'province']).apply(lambda df:df.loc[df.points.idxmax()]))
+# use of agg to apply multiple functions to a grouped DataFrame
+print(reviews.groupby(['country']).price.agg([len,min,max]))
+
+# multiple aggregations on multiple columns
+countries_reviewed = reviews.groupby(['country','province']).description.agg([len])
+print(countries_reviewed)
+print(countries_reviewed.reset_index())
+
+### Sorting
+# sort values ascending sort by default
+print(countries_reviewed.sort_values(by='len'))
+# sort values descending
+print(countries_reviewed.sort_values(by='len', ascending=False))
+print(countries_reviewed.sort_index())
+# sorting more than one column at a time
+print(countries_reviewed.sort_values(by=['country', 'len']))
+
+# EX 1
+"""
+Who are the most common wine reviewers in the dataset? Create a Series whose index is 
+the taster_twitter_handle category from the dataset, and whose values count how many reviews each person wrote.    
+"""
+reviews_written = reviews.groupby('taster_twitter_handle').taster_twitter_handle.count()
+print("Reviews written by each taster:\n", reviews_written)
+
+# EX 2
+"""
+What is the best wine I can buy for a given amount of money? Create a Series whose index is wine
+prices and whose values is the maximum number of points a wine costing that much was given in a review. 
+Sort the values by price, ascending (so that 4.0 dollars is at the top and 3300.0 dollars is at the bottom).    
+"""
+best_rating_per_price = reviews.groupby('price')['points'].max().sort_index()
+print("Best rating per price:\n", best_rating_per_price)
+
+# EX 3
+"""
+What are the minimum and maximum prices for each variety of wine? 
+Create a DataFrame whose index is the variety category from the dataset and
+whose values are the min and max values thereof.
+"""
+price_extremes = reviews.groupby('variety').price.agg(['min','max'])
+print("Price extremes per variety:\n", price_extremes)
+
+# EX 4
+"""
+What are the most expensive wine varieties? Create a variable 
+sorted_varieties containing a copy of the dataframe from the 
+previous question where varieties are sorted in descending order
+based on minimum price, then on maximum price (to break ties).    
+"""
+sorted_varieties = price_extremes.sort_values(by=['min','max'], ascending=False)
+print("Sorted varieties by price:\n", sorted_varieties)
