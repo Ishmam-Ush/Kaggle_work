@@ -64,3 +64,9 @@ based on minimum price, then on maximum price (to break ties).
 """
 sorted_varieties = price_extremes.sort_values(by=['min','max'], ascending=False)
 print("Sorted varieties by price:\n", sorted_varieties)
+
+# EX 5
+"""
+Create a Series whose index is reviewers and whose values is the average 
+review score given out by that reviewer. Hint: you will need the taster_name and points columns.
+"""
