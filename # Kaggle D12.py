@@ -82,3 +82,4 @@ Sort the values in the Series in descending order based on wine count.
 """
 country_variety_counts = reviews.groupby(['country','variety']).size().sort_values(ascending=False)
 print("Most common country-variety combinations:\n", country_variety_counts)
+
