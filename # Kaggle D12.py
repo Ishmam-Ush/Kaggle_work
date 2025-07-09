@@ -70,3 +70,15 @@ print("Sorted varieties by price:\n", sorted_varieties)
 Create a Series whose index is reviewers and whose values is the average 
 review score given out by that reviewer. Hint: you will need the taster_name and points columns.
 """
+reviewer_mean_ratings = reviews.groupby('taster_name').points.mean()
+print("Average review score by reviewer:\n", reviewer_mean_ratings)
+
+# EX 6
+"""
+What combination of countries and varieties are most common? 
+Create a Series whose index is a MultiIndexof {country, variety} pairs.
+For example, a pinot noir produced in the US should map to {"US", "Pinot Noir"}.
+Sort the values in the Series in descending order based on wine count.
+"""
+country_variety_counts = reviews.groupby(['country','variety']).size().sort_values(ascending=False)
+print("Most common country-variety combinations:\n", country_variety_counts)
