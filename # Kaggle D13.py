@@ -36,3 +36,14 @@ plt.ylabel("Streams")
 sns.lineplot(data=spotify_data)
 plt.show()  # Show the plot
 
+# Plotting a subset of specific columns
+list(spotify_data.columns)  # List the columns in the DataFrame
+plt.figure(figsize=(12, 6))
+sns.lineplot(data=spotify_data['Shape of You'], label='Shape of You')
+sns.lineplot(data=spotify_data['Despacito'], label='Despacito')
+plt.ylabel("Streams")
+plt.title("Spotify Daily Streams for Selected Songs")
+plt.legend()  # Show the legend
+plt.show()  # Show the plot
+
+
