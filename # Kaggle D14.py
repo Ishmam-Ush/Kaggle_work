@@ -72,6 +72,7 @@ plt.title("BMI vs Charges")
 plt.xlabel("BMI")
 plt.ylabel("Charges")
 plt.show()
+# Regression plot showing the relationship between BMI and Charges with hue based on smoker status
 sns.lmplot(x='bmi', y='charges', hue='smoker', data=insurance_data)
 plt.title("BMI vs Charges with Regression Line and Smoker Status")
 plt.xlabel("BMI")
@@ -84,3 +85,4 @@ plt.title("Charges by Smoker Status")
 plt.xlabel("Smoker Status")
 plt.ylabel("Charges")
 plt.show()  # Show the plot
+
