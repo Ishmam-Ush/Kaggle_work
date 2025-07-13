@@ -3,11 +3,28 @@
         "./pip install "
     ],
     "cSpell.words": [
+        "annot",
         "bargin",
+        "barplot",
+        "Despacito",
+        "fifa",
+        "figsize",
         "Kaggle",
+        "kerino",
+        "kerinokeefe",
         "learntools",
+        "lineplot",
+        "lmplot",
+        "lsuffix",
+        "regplot",
         "remean",
+        "rsuffix",
+        "scatterplot",
         "simplelinearregression",
-        "winemag"
+        "swarmplot",
+        "viridis",
+        "winemag",
+        "xlabel",
+        "ylabel"
     ]
 }
