@@ -24,9 +24,11 @@
         "remean",
         "rsuffix",
         "scatterplot",
+        "setstyle",
         "simplelinearregression",
         "swarmplot",
         "viridis",
+        "whitegrid",
         "winemag",
         "xlabel",
         "ylabel"
