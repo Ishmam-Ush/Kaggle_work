@@ -50,10 +50,16 @@ plt.ylabel('Density')
 plt.show()
 
 ## Exercise
+#Ex1
 cancer_filepath = r"E:\Courses\Python Kaggle\Datasets\cancer.csv"
 cancer_filepath = cancer_filepath.replace("\\", "/")
 cancer_data = pd.read_csv(cancer_filepath, index_col='Id')
+#Ex2
 print(cancer_data.head(10))
-
+#Ex3
 print("max_perimeter = 87.46")
 print("mean_radius = 9.504")
+#Ex4
+# Histograms for benign and malignant tumors
+sns.histplot(data=cancer_data, x='Area (mean)', hue='Diagnosis')
+plt.show()
