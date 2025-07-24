@@ -17,3 +17,7 @@ from sklearn.tree import DecisionTreeRegressor
 
 melb_model = DecisionTreeRegressor(random_state=1) # Step 1 : Defining Model type & Specifying a number for random_state to ensure same results each run
 melb_model.fit(X,y) # Fitting Model
+print('Making preparation for the following 5 houses:')
+print(X.head())
+print('The predictions are')
+print(melb_model.predict(X.head()))
