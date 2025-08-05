@@ -20,4 +20,4 @@ melb_model.fit(X,y) # Fitting Model
 print('Making preparation for the following 5 houses:')
 print(X.head())
 print('The predictions are')
-print(melb_model.predict(X.head()))
+print(melb_model.predict(X.head())) # Prediction of price 
