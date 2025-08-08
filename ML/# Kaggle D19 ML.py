@@ -1,4 +1,4 @@
-# Testing Dataset
+# Testing Dataset practice sheet
 import pandas as pd
 # Loading the dataset
 car_sale_filepath = r"E:\Courses\Python Kaggle\Datasets\Car sales\Cars Datasets 2025.csv"
@@ -13,9 +13,9 @@ car_data = car_data.dropna(axis=0) # Dropping rows with missing values
 print(car_data.describe()) # Describing the dataset after dropping missing values
 print("2nd setup complete")
 # Choosing target variable and features
-y = pd.get_dummies(car_data.Cars_Prices) # Target variable we want to predict
+y = car_data.Cars_Prices # Target variable we want to predict
 car_features = ['CC/Battery_Capacity','HorsePower','Total_Speed','Performance(0_-_100_)KM/H','Fuel_Types','Seats','Torque']  # Features to help predict the price 
-X = pd.get_dummies(car_data[car_features]) # Selecting features from the dataset
+X = car_data[car_features] # Selecting features from the dataset
 print(X.describe())  # Describing the features
 print(X.head())  # Displaying the first few rows of the features
 
