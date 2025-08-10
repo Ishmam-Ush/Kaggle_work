@@ -6,6 +6,7 @@
         "annot",
         "bargin",
         "barplot",
+        "colname",
         "Despacito",
         "fifa",
         "figsize",
@@ -25,6 +26,7 @@
         "lsuffix",
         "melb",
         "regplot",
+        "relplot",
         "remean",
         "rsuffix",
         "scatterplot",
@@ -35,6 +37,7 @@
         "whitegrid",
         "winemag",
         "xlabel",
-        "ylabel"
+        "ylabel",
+        "yticks"
     ]
 }
