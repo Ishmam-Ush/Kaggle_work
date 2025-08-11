@@ -42,15 +42,6 @@ def plot_mi_scores(scores):
     plt.yticks(width,ticks) # Set y-ticks to feature names
     plt.title("Mutual Information Scores") # Set plot title
     
-import numpy as np
-df2 = df.replace('?', np.nan).copy()
-df2['price'] = pd.to_numeric(df2['price'], errors='coerce')
-df2['curb_weight'] = pd.to_numeric(df2['curb_weight'], errors='coerce')
-df2 = df2.dropna(subset=['price','curb_weight'])
-
-import seaborn as sns
-sns.relplot(x='curb_weight', y='price', data=df2)   # now y is numeric
-
 
 plt.figure(dpi=100, figsize=(8,5))
 plot_mi_scores(mi_scores)
@@ -59,3 +50,5 @@ sns.relplot(x="curb-weight", y="price", data=df)
 plt.show()
 sns.lmplot(x="horsepower", y="price", hue="fuel-type", data=df)
 plt.show()
+
+
