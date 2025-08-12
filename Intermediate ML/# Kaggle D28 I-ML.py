@@ -17,6 +17,7 @@ X = melb_predict.select_dtypes(exclude=['object'])
 X_train, X_valid, y_train, y_valid = train_test_split(X, y, train_size=0.8, test_size=0.2, random_state=0)
 
 # Approach 1 --> Dropping values
+
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 
@@ -39,6 +40,7 @@ print("MAE from Approach 1 (Drop columns with missing values):")
 print(score_dataset(reduced_X_train, reduced_X_valid, y_train, y_valid))
 
 # Approach 2 --> Imputation
+
 from sklearn.impute import SimpleImputer
 
 # Imputation
@@ -54,6 +56,7 @@ print("MAE from Approach 2 (Imputation):")
 print(score_dataset(imputed_X_train, imputed_X_valid, y_train, y_valid))
 
 # Approach 3 --> An extension to Imputation
+
 # Make copy to avoid changing original data (when imputing)
 X_train_plus = X_train.copy()
 X_valid_plus = X_valid.copy()
@@ -77,6 +80,10 @@ print(score_dataset(imputed_X_train_plus, imputed_X_valid_plus, y_train, y_valid
 
 # Shape of training data (num_rows, num_columns)
 print(X_train.shape)
+
+# Number of missing values in each column of training data
+missing_val_count_by_column = (X_train.isnull().sum())
+print(missing_val_count_by_column[missing_val_count_by_column > 0])
 
 # Number of missing values in each column of training data
 missing_val_count_by_column = (X_train.isnull().sum())
