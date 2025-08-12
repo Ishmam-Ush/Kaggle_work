@@ -12,6 +12,7 @@
         "colname",
         "ddof",
         "Despacito",
+        "distplot",
         "fifa",
         "figsize",
         "figwidth",
@@ -34,6 +35,7 @@
         "Longtitude",
         "lsuffix",
         "melb",
+        "movielens",
         "regplot",
         "relplot",
         "remean",
@@ -52,6 +54,7 @@
         "xlabel",
         "ylabel",
         "ylim",
-        "yticks"
+        "yticks",
+        "Zipcodes"
     ]
 }

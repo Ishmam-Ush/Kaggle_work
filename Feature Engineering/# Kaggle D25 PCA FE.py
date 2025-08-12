@@ -1,3 +1,4 @@
+# Focused on PCA feature engineering for Kaggle D25 Automobile dataset But its incomplete needs further revision.
 import numpy as np
 import pandas as pd
 from sklearn.impute import SimpleImputer
