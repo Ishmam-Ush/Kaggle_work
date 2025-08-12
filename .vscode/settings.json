@@ -8,13 +8,16 @@
         "bargin",
         "barplot",
         "catplot",
+        "classif",
         "colname",
         "ddof",
         "Despacito",
         "fifa",
         "figsize",
+        "figwidth",
         "histoplot",
         "histplot",
+        "issubdtype",
         "jointplot",
         "Kaggle",
         "kdeplot",
@@ -48,6 +51,7 @@
         "winemag",
         "xlabel",
         "ylabel",
+        "ylim",
         "yticks"
     ]
 }

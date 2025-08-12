@@ -1,80 +1,48 @@
-import matplotlib.pyplot as plt
-import pandas as pd
 import numpy as np
-import seaborn as sns
-from IPython.display import display
+import pandas as pd
+from sklearn.impute import SimpleImputer
+from sklearn.decomposition import PCA
 from sklearn.feature_selection import mutual_info_regression
 
-sns.set_style("whitegrid")
-plt.rc("figure", autolayout=True)
-plt.rc(
-    "axes",
-    labelweight="bold",
-    labelsize="large",
-    titleweight="bold",
-    titlesize=14,
-    titlepad=10,
-)
-def plot_variance(pca, width=8, dpi=100):
-    # Create figure
-    fig, axs = plt.subplots(1, 2)
-    n = pca.n_components_
-    grid = np.arange(1, n + 1)
-    # Explained variance
-    evr = pca.explained_variance_ratio_
-    axs[0].bar(grid, evr)
-    axs[0].set(
-        xlabel="Component", title="% Explained Variance", ylim=(0.0, 1.0)
-    )
-    # Cumulative Variance
-    cv = np.cumsum(evr)
-    axs[1].plot(np.r_[0, grid], np.r_[0, cv], "o-")
-    axs[1].set(
-        xlabel="Component", title="% Cumulative Variance", ylim=(0.0, 1.0)
-    )
-    # Set up figure
-    fig.set(figwidth=8, dpi=100)
-    return axs
-
-def make_mi_scores(X, y, discrete_features):
-    mi_scores = mutual_info_regression(X, y, discrete_features=discrete_features)
-    mi_scores = pd.Series(mi_scores, name="MI Scores", index=X.columns)
-    mi_scores = mi_scores.sort_values(ascending=False)
-    return mi_scores
+# --- load ---
 df_filepath = r"E:\Courses\Python Kaggle\Datasets\Automobile\Automobile_data.csv"
-df_filepath = df_filepath.replace("\\", "/")
-df = pd.read_csv(df_filepath)
-print(df.columns)
-features = ["highway-mpg", "engine-size", "curb-weight", "horsepower",]
+df = pd.read_csv(df_filepath.replace("\\", "/"))
 
-X = df.copy()
-y = X.pop("price")
-X = X.loc[:, features]
+# --- clean y first and make a row mask ---
+y_raw = df["price"].replace(['?', 'NA', 'N/A', 'None', '', 'nan'], np.nan)
+y_num = pd.to_numeric(y_raw, errors='coerce')
+mask = y_num.notna()
 
-X = X.replace('?', np.nan).apply(pd.to_numeric, errors='coerce')
-print("NaNs per column:\n", X.isna().sum())
-X = X.fillna(X.median()) 
+# keep only rows with numeric price
+df = df.loc[mask].reset_index(drop=True)
+y = y_num.loc[mask].reset_index(drop=True)
 
-X_scaled = (X - X.mean()) / X.std(ddof=0) 
+# --- features ---
+features = ["highway-mpg", "engine-size", "curb-weight", "horsepower"]
+X = df[features].replace(['?', 'NA', 'N/A', 'None', '', 'nan'], np.nan)
+X = X.apply(pd.to_numeric, errors='coerce')
 
-from sklearn.decomposition import PCA
+# impute + scale
+X = pd.DataFrame(SimpleImputer(strategy='median').fit_transform(X), columns=features)
+X_scaled = (X - X.mean()) / X.std(ddof=0)
 
-# Create principal components
+# PCA
 pca = PCA()
-X_pca = pca.fit_transform(X_scaled)
+X_pca_arr = pca.fit_transform(X_scaled)
+X_pca = pd.DataFrame(X_pca_arr, columns=[f"PC{i+1}" for i in range(X_pca_arr.shape[1])])
 
-# Convert to dataframe
-component_names = [f"PC{i+1}" for i in range(X_pca.shape[1])]
-X_pca = pd.DataFrame(X_pca, columns=component_names)
+# Diagnostic helper
+print(y.dtype, y.isna().sum())
+print(X_pca.dtypes)
+assert not X_pca.isna().any().any()
 
-print(X_pca.head())
-loadings = pd.DataFrame(
-    pca.components_.T,  # transpose the matrix of loadings
-    columns=component_names,  # so the columns are the principal components
-    index=X.columns,  # and the rows are the original features
-)
-loadings
-# Look at explained variance
-plot_variance(pca);
+
+# MI helper
+def make_mi_scores(X_df, y_series, discrete_features=False):
+    mi = mutual_info_regression(X_df.to_numpy(), y_series.to_numpy(), discrete_features=discrete_features, random_state=0)
+    return pd.Series(mi, name="MI Scores", index=X_df.columns).sort_values(ascending=False)
+
+# run
 mi_scores = make_mi_scores(X_pca, y, discrete_features=False)
-mi_scores
+print(mi_scores.head())
+
