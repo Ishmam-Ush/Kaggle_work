@@ -36,6 +36,7 @@
         "lsuffix",
         "melb",
         "movielens",
+        "onehot",
         "preds",
         "regplot",
         "relplot",
