@@ -31,8 +31,8 @@ y_train = df_train['quality']
 y_valid = df_valid['quality']
 
 early_stopping = callbacks.EarlyStopping(
-    min_delta=0.001, # minimium amount of change to count as an improvement
-    patience=20, # how many epochs to wait before stopping
+    min_delta=0.001, # minimum amount of change to count as an improvement
+    patience=20, # how many epochs to wait before stopping              
     restore_best_weights=True,
 )
 
