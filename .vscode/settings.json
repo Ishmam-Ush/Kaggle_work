@@ -36,6 +36,7 @@
         "lsuffix",
         "melb",
         "movielens",
+        "noncardholders",
         "onehot",
         "preds",
         "regplot",
